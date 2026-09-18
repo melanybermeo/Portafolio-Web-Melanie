@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melanie Bermeo|Portafolio Web</title>
+<meta name="description" content="Portafolio profesional de Melanie Bermeo, estudiante de Ingeniería en Software en la UNEMI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-i18n="a11y.skip">Saltar al contenido principal</a>
+
+<header class="site-header">
+  <nav class="navbar container" aria-label="Navegación principal">
+    <a href="index.html" class="logo">Melanie<span>.dev</span></a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" data-i18n="nav.home" aria-current="page">Inicio</a></li>
+      <li><a href="sobre-mi.html" data-i18n="nav.about">Sobre mí</a></li>
+      <li><a href="habilidades.html" data-i18n="nav.skills">Habilidades</a></li>
+      <li><a href="proyectos.html" data-i18n="nav.projects">Proyectos</a></li>
+      <li><a href="design-system.html" data-i18n="nav.design">Design System</a></li>
+      <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="nav-toolbar">
+        <div class="lang-switch" role="group" aria-label="Elegir idioma / Choose language">
+          <button type="button" class="lang-btn is-active" data-lang-btn="es">ES</button>
+          <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        </div>
+        <button type="button" id="themeToggle" class="theme-toggle" aria-label="Cambiar a modo claro">
+          <span aria-hidden="true">🌙</span>
+        </button>
+      </div>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú de navegación">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Portafolio profesional</p>
+        <h1>
+          <span data-i18n="hero.greeting">Hola, soy</span>
+          <span class="highlight">Melanie Bermeo</span>
+        </h1>
+        <p class="hero-role" data-i18n="hero.role">Estudiante de Ingeniería en Software</p>
+        <p class="hero-desc" data-i18n="hero.desc">
+          Construyo aplicaciones web con foco en experiencias claras y útiles: desde finanzas
+          personales hasta asistencia inteligente para personas con desafíos sensoriales.
+        </p>
+        <div class="hero-actions">
+          <a href="proyectos.html" class="btn btn-primary" data-i18n="hero.cta1">Ver proyectos</a>
+          <a href="contacto.html" class="btn btn-outline" data-i18n="hero.cta2">Contactarme</a>
+        </div>
+      </div>
+
+      <figure class="hero-media avatar-frame">
+        <img src="assets/img/avatar.jpeg" alt="Foto de perfil de Melanie Bermeo" width="280" height="280">
+        <figcaption class="sr-only">Melanie Bermeo</figcaption>
+      </figure>
+    </div>
+
+    <section class="container stats-row" aria-labelledby="statsHeading">
+      <h2 id="statsHeading" class="sr-only">Resumen rápido</h2>
+      <article class="stat-card">
+        <span class="stat-icon" aria-hidden="true">🚀</span>
+        <span class="stat-number">3</span>
+        <span class="stat-label" data-i18n="hero.stat1">Proyectos destacados</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon" aria-hidden="true">🎓</span>
+        <span class="stat-number">1</span>
+        <span class="stat-label" data-i18n="hero.stat2">Certificado</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon" aria-hidden="true">💻</span>
+        <span class="stat-number">2</span>
+        <span class="stat-label" data-i18n="hero.stat3">Lenguajes de backend</span>
+      </article>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p data-i18n="footer.rights">&copy; 2026 Melanie Bermeo. Todos los derechos reservados.</p>
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Volver arriba">↑</button>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+

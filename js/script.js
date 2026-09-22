@@ -66,7 +66,33 @@ document.addEventListener('DOMContentLoaded', () => {
   applyTheme(currentTheme);
 
   /* ============================================================
-     3) BOTÓN "VOLVER ARRIBA"
+    3) FILTRO DE PROYECTOS POR TECNOLOGÍA
+     ============================================================ */
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  const emptyState = document.getElementById('emptyState');
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      const filter = btn.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      projectCards.forEach((card) => {
+        const tech = card.getAttribute('data-tech') || '';
+        const matches = filter === 'all' || tech.includes(filter);
+        card.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+
+      if (emptyState) emptyState.hidden = visibleCount !== 0;
+    });
+  });
+
+  /* ============================================================
+     4) BOTÓN "VOLVER ARRIBA"
      ============================================================ */
   const backToTop = document.getElementById('backToTop');
 

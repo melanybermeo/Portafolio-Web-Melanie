@@ -112,3 +112,83 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+  /* ============================================================
+     5) VALIDACIÓN Y ENVÍO DEL FORMULARIO DE CONTACTO
+     ============================================================ */
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+
+  function showError(input, message) {
+    input.classList.add('is-invalid');
+    const errorEl = contactForm.querySelector(`[data-error-for="${input.id}"]`);
+    if (errorEl) errorEl.textContent = message;
+  }
+
+  function clearError(input) {
+    input.classList.remove('is-invalid');
+    const errorEl = contactForm.querySelector(`[data-error-for="${input.id}"]`);
+    if (errorEl) errorEl.textContent = '';
+  }
+
+  function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  if (contactForm) {
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    [nameInput, emailInput, messageInput].forEach((input) => {
+      input.addEventListener('input', () => clearError(input));
+    });
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      let isValid = true;
+
+      if (nameInput.value.trim().length < 2) {
+        showError(nameInput, 'Escribe tu nombre completo.');
+        isValid = false;
+      } else {
+        clearError(nameInput);
+      }
+
+      if (!isValidEmail(emailInput.value.trim())) {
+        showError(emailInput, 'Escribe un correo válido.');
+        isValid = false;
+      } else {
+        clearError(emailInput);
+      }
+
+      if (messageInput.value.trim().length < 10) {
+        showError(messageInput, 'Tu mensaje debe tener al menos 10 caracteres.');
+        isValid = false;
+      } else {
+        clearError(messageInput);
+      }
+
+      if (isValid) {
+        const formData = new FormData(contactForm);
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        })
+          .then((response) => {
+            if (response.ok) {
+              formSuccess.hidden = false;
+              contactForm.reset();
+              setTimeout(() => { formSuccess.hidden = true; }, 6000);
+            } else {
+              alert('Hubo un error al enviar el mensaje. Intenta de nuevo.');
+            }
+          })
+          .catch(() => {
+            alert('Hubo un error al enviar el mensaje. Intenta de nuevo.');
+          });
+      } else {
+        formSuccess.hidden = true;
+      }
+    });
+  }

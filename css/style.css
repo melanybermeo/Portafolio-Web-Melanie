@@ -595,6 +595,54 @@ ul { list-style: none; margin: 0; padding: 0; }
 .component-sample textarea {
   width: 100%;
 }
+/* ===== FORMULARIOS ===== */
+input, textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  transition: border-color var(--transition);
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: var(--space-xs); }
+
+.form-group { margin-bottom: var(--space-md); }
+.error-msg {
+  display: block;
+  min-height: 1.1em;
+  color: var(--color-error);
+  font-size: 0.8rem;
+  margin-top: var(--space-xs);
+}
+input.is-invalid, textarea.is-invalid { border-color: var(--color-error); }
+
+.form-success {
+  margin-top: var(--space-md);
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+/* ===== CONTACTO ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-xl);
+}
+.contact-links {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  height: fit-content;
+}
+.contact-links li { margin-bottom: var(--space-sm); }
 /* =========================================================
    RESPONSIVE
    ========================================================= */

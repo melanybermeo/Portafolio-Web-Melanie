@@ -5,15 +5,15 @@
 
 :root {
   /* Colores */
-  --color-primary: #7c3aed;
-  --color-primary-dark: #5b21b6;
-  --color-secondary: #c084fc;
-  --color-background: #0f0a1f;
-  --color-surface: #1a1533;
-  --color-surface-alt: #150f29;
-  --color-text: #f1eefc;
-  --color-text-muted: #a79fc4;
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-primary: #A94D62;
+  --color-primary-dark: #7A3648;
+  --color-secondary: #D5A08E;
+  --color-background: #120D0F;
+  --color-surface: #211518;
+  --color-surface-alt: #2A1A1D;
+  --color-text: #F5EEEE;
+  --color-text-muted: #EBD8D1;
+  --color-border: rgba(245, 238, 238, 0.1);
   --color-success: #34d399;
   --color-error: #f87171;
 
@@ -33,7 +33,7 @@
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --shadow-card: 0 4px 20px rgb(0 0 0 / 0.35);
-  --shadow-glow: 0 0 40px rgb(124 58 237 / 0.25);
+  --shadow-glow: 0 0 40px rgb(169 77 98 / 0.35);
 
   /* Layout */
   --max-width: 1140px;
@@ -178,8 +178,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(15, 10, 31, 0.85);
-  backdrop-filter: blur(10px);
+  background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -385,7 +384,42 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .footer-row p { margin: 0; color: var(--color-text-muted); font-size: 0.85rem; }
 
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+.footer-center p { margin: 0; color: var(--color-text-muted); font-size: 0.85rem; }
+
+.footer-social {
+  display: flex;
+  gap: var(--space-md);
+}
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.social-icon:hover, .social-icon:focus-visible {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
 .back-to-top {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 40;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   color: var(--color-text);
@@ -425,6 +459,19 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: var(--space-lg);
 }
 .about-actions { margin: var(--space-md) 0 var(--space-lg); }
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+.info-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
 
 /* ===== BADGES (se usan en Sobre mí y también en Habilidades) ===== */
 .skill-badges { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-sm); }
@@ -643,6 +690,79 @@ input.is-invalid, textarea.is-invalid { border-color: var(--color-error); }
   height: fit-content;
 }
 .contact-links li { margin-bottom: var(--space-sm); }
+
+/* ===== ANIMACIÓN AL HACER SCROLL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== HOBBIES ===== */
+.hobbies-block {
+  margin-top: var(--space-xl);
+}
+.hobbies-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.hobbies-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.hobbies-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  align-items: start;
+}
+.hobby-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+.hobby-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
+}
+.hobby-card h4 {
+  margin: 0 0 var(--space-xs);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+.hobby-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */

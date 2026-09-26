@@ -327,7 +327,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero-media { display: flex; justify-content: center; }
 
 .avatar-frame {
-  margin: 0;
+  margin: 0 auto;
   width: 280px;
   height: 280px;
   border-radius: 50%;
@@ -771,6 +771,7 @@ input.is-invalid, textarea.is-invalid { border-color: var(--color-error); }
   .hero-actions { justify-content: center; }
   .hero-media { order: -1; }
   .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
   .stats-row { grid-template-columns: 1fr 1fr; }
 }
 

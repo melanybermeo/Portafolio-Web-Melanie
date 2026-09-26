@@ -5,7 +5,7 @@ Portafolio web personal e interactivo, de varias páginas, desarrollado con **HT
 ## Enlaces
 
 - **Repositorio:** [Portafolio-Web-Melanie](https://github.com/melanybermeo/Portafolio-Web-Melanie)
-- **Sitio publicado (GitHub Pages):** se agrega al publicar
+- **Sitio publicado (GitHub Pages):** [https://melanybermeo.github.io/Portafolio-Web-Melanie/](https://melanybermeo.github.io/Portafolio-Web-Melanie/)
 
 ## Tecnologías utilizadas
 

@@ -555,7 +555,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .project-card:hover { transform: translateY(-4px); }
 .project-card[hidden] { display: none; }
 
-.project-image { margin: 0; aspect-ratio: 16/9; background: var(--color-surface-alt); }
+.project-image { margin: 0; height: 200px; background: var(--color-surface-alt); }
 .project-image img { width: 100%; height: 100%; object-fit: cover; }
 
 .project-body { padding: var(--space-lg); flex: 1; display: flex; flex-direction: column; }
@@ -733,7 +733,6 @@ input.is-invalid, textarea.is-invalid { border-color: var(--color-error); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-md);
-  align-items: start;
 }
 .hobby-card {
   background: var(--color-surface);
